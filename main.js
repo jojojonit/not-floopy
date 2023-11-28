@@ -4,9 +4,11 @@
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 200
 
+const gameScreen = document.querySelector("#game-screen")
 const worldEl = document.querySelector(".world")
-const scoreEl = document.querySelector(".score")
+const scoreEl = document.querySelector("#score")
 const startScreenEl = document.querySelector(".start-screen")
+const loseScreenEL = document.querySelector(".lose-screen")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -36,6 +38,7 @@ function update(time) {
 
 function ifLose() {
   const hanaRect = getHanaRect()
+  
   return getObstacleRects().some(rect => isCollision(rect,hanaRect))
 }
 
@@ -59,6 +62,7 @@ function handleStart() {
   setupHana()
   setupObstacle()
   startScreenEl.classList.add("hide")
+  // loseScreenEl.classList.add("hide")
   window.requestAnimationFrame(update)
 }
 
@@ -67,6 +71,8 @@ function handleLose() {
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
     startScreenEl.classList.remove("hide")
+    startScreenEl.innerHTML ="hit [space] to try again"
+    
   }, 100)
 }
 
@@ -83,11 +89,8 @@ function setPixelToWorldScale() {
   worldEl.style.height = '${WORLD_HEIGHT * worldToPixelScale}px'
 }
 
-//hana
+function main() {
 
-// function moveHana(e) {
-//   if (e.code == "Space" || e.code == "ArrowUp") {
-//     velocityY = -6
-//   }
-// }
+}
 
+main()
