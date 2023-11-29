@@ -65,11 +65,12 @@ function handleStart() {
   setupHana()
   setupObstacle()
   setupCake() 
-    if (nextObstacleTime > 0) {
-      setTimeout (() => {
-        setupCake
-      }, 100)
-    }
+    // if (nextObstacleTime > 0) {
+    //   setTimeout (() => {
+    //     setupCake
+    //   }, 100)
+    // }
+    
   
   startScreenEl.classList.add("hide")
   // loseScreenEl.classList.add("hide")

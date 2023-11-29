@@ -6,8 +6,14 @@ const CAKE_INTERVAL_MAX = 20000
 const worldEl = document.querySelector(".world")
 
 let nextCakeTime
+let nextObstacleTime
 
 export function setupCake() {
+    if (nextObstacleTime > 0) {
+        setTimeout (() => {
+          setupCake
+        }, 200)
+      }
     nextCakeTime = CAKE_INTERVAL_MIN
     document.querySelectorAll(".cake").forEach(cake => {
         cake.remove()
@@ -24,7 +30,7 @@ export function updateCake(delta) {
 
     if(nextCakeTime <= 0) {
         createCake()
-        nextCakeTime = 10000
+        nextCakeTime = 5000
                         
     }
     nextCakeTime -= delta
