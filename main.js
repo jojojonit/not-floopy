@@ -1,6 +1,6 @@
  import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
- import { updateObstacle, setupObstacle, getObstacleRects } from "./obstacles.js"
- import { updateCake, setupCake } from "./cake.js"
+ import { updateObstacle, setupObstacle, getObstacleRects, updateCake, setupCake, getCakeRects} from "./obstacles.js"
+//  import { updateCake, setupCake } from "./cake.js"
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 200
@@ -11,6 +11,7 @@ const worldEl = document.querySelector(".world")
 const scoreEl = document.querySelector("#score")
 const startScreenEl = document.querySelector(".start-screen")
 const loseScreenEL = document.querySelector(".lose-screen")
+const obstacleEl = document.querySelectorAll(".obstacle")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -42,7 +43,10 @@ function update(time) {
 function ifLose() {
   const hanaRect = getHanaRect()
   
-  return getObstacleRects().some(rect => isCollision(rect,hanaRect))
+  return getObstacleRects().some(rect => isCollision(rect,hanaRect)) || 
+  getCakeRects().some(rect => isCollision(rect,hanaRect))
+
+
 }
 
 function isCollision (rect1, rect2) {
@@ -65,11 +69,7 @@ function handleStart() {
   setupHana()
   setupObstacle()
   setupCake() 
-    // if (nextObstacleTime > 0) {
-    //   setTimeout (() => {
-    //     setupCake
-    //   }, 100)
-    // }
+   
     
   
   startScreenEl.classList.add("hide")

@@ -15,7 +15,7 @@ body {
 
 .world {
   overflow: hidden;
-  position: absolute;
+  position: relative;
   width:100%;
   height: 500px;
   background-color: #E4F9FF;
@@ -69,6 +69,8 @@ body {
   left: calc(var(--left) * 1%);
   height: 20%;
   bottom: calc(var(--bottom) * 1%);
+  margin-left: 10px;
+  /* margin-right: 10px; */
 }
 
 .cake {
@@ -77,15 +79,9 @@ body {
   left: calc(var(--left) * 1%);
   height: 30%;
   bottom: calc(var(--bottom) * 1%);
-  margin-left: 10px;
-  margin-right: 20px;
+  /* margin-left: 10px; */
+  margin-right: 10px;
 }
 
 
-.obstacleTop {
-  --top: 0;
-  position: absolute;
-  left: calc(var(--left) * 1%);
-  width: 5%;
-  top: calc(var(--top) * 1%);
-}
+
