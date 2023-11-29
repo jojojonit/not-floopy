@@ -83,5 +83,14 @@ body {
   margin-right: 10px;
 }
 
+.bonus {
+  --top: 20;
+  position: absolute;
+  left: calc(var(--left) * 1%);
+  height: 10%;
+  top: calc(var(--top) * 1%);
+  /* margin-left: 10px; */
+  margin-right: 10px;
+}
 
 

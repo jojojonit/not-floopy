@@ -1,6 +1,7 @@
  import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
  import { updateObstacle, setupObstacle, getObstacleRects, updateCake, setupCake, getCakeRects} from "./obstacles.js"
 //  import { updateCake, setupCake } from "./cake.js"
+import { updateBonus, setupBonus, getBonusRects, setBonusCollected} from "./bonus.js"
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 200
@@ -10,7 +11,7 @@ const gameScreen = document.querySelector("#game-screen")
 const worldEl = document.querySelector(".world")
 const scoreEl = document.querySelector("#score")
 const startScreenEl = document.querySelector(".start-screen")
-const loseScreenEL = document.querySelector(".lose-screen")
+const bonusEl = document.querySelectorAll(".bonus")
 const obstacleEl = document.querySelectorAll(".obstacle")
 
 setPixelToWorldScale()
@@ -31,7 +32,11 @@ function update(time) {
   updateHana(delta)
   updateObstacle(delta)
   updateCake(delta) 
+  updateBonus(delta)
   updateScore(delta)
+  if (ifBonus()) {
+    handleBonus()
+  }
   if (ifLose()) return handleLose()
 
   
@@ -48,6 +53,15 @@ function ifLose() {
 
 
 }
+
+function ifBonus() {
+  const hanaRect = getHanaRect()
+
+  return getBonusRects().some(rect => isCollision(rect,hanaRect)) 
+  // &&
+  // document.querySelectorAll("[data-bonus]").forEach(bonus => classList.add("hide"))
+}
+
 
 function isCollision (rect1, rect2) {
   return (
@@ -69,11 +83,11 @@ function handleStart() {
   setupHana()
   setupObstacle()
   setupCake() 
+  setupBonus()
    
     
   
   startScreenEl.classList.add("hide")
-  // loseScreenEl.classList.add("hide")
   window.requestAnimationFrame(update)
 }
 
@@ -85,6 +99,11 @@ function handleLose() {
     startScreenEl.innerHTML = "SCORE: " + Math.floor(score) + " <br />hit [space] to try again"
     
   }, 100)
+}
+
+function handleBonus() {
+  setBonusCollected()
+  score += 10
 }
 
 
