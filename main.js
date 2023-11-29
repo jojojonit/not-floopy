@@ -1,8 +1,10 @@
  import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
  import { updateObstacle, setupObstacle, getObstacleRects } from "./obstacles.js"
+ import { updateCake, setupCake } from "./cake.js"
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 200
+let nextObstacleTime
 
 const gameScreen = document.querySelector("#game-screen")
 const worldEl = document.querySelector(".world")
@@ -27,6 +29,7 @@ function update(time) {
   
   updateHana(delta)
   updateObstacle(delta)
+  updateCake(delta) 
   updateScore(delta)
   if (ifLose()) return handleLose()
 
@@ -61,6 +64,13 @@ function handleStart() {
   score = 0
   setupHana()
   setupObstacle()
+  setupCake() 
+    if (nextObstacleTime > 0) {
+      setTimeout (() => {
+        setupCake
+      }, 100)
+    }
+  
   startScreenEl.classList.add("hide")
   // loseScreenEl.classList.add("hide")
   window.requestAnimationFrame(update)
