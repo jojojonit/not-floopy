@@ -71,7 +71,7 @@ function handleLose() {
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
     startScreenEl.classList.remove("hide")
-    startScreenEl.innerHTML ="score <br />hit [space] to try again"
+    startScreenEl.innerHTML = "SCORE: " + Math.floor(score) + " <br />hit [space] to try again"
     
   }, 100)
 }
@@ -94,3 +94,7 @@ function main() {
 }
 
 main()
+
+console.log("hana our happiness");
+
+
