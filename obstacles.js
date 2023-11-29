@@ -42,7 +42,6 @@ export function getObstacleRects() {
 }
 
 export function setupCake() {
-   
     nextCakeTime = CAKE_INTERVAL_MIN
     document.querySelectorAll(".cake").forEach(cake => {
         cake.remove()

@@ -1,6 +1,6 @@
- import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
- import { updateObstacle, setupObstacle, getObstacleRects, updateCake, setupCake, getCakeRects} from "./obstacles.js"
-//  import { updateCake, setupCake } from "./cake.js"
+import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
+// import { updateObstacle, setupObstacle, getObstacleRects, updateCake, setupCake, getCakeRects} from "./obstacles.js"
+import { updateCake, setupCake, getCakeRects} from "./cake.js"
 import { updateBonus, setupBonus, getBonusRects, setBonusCollected} from "./bonus.js"
 
 const WORLD_WIDTH = 100
@@ -30,7 +30,7 @@ function update(time) {
   const delta = time - lastTime
   
   updateHana(delta)
-  updateObstacle(delta)
+  // updateObstacle(delta)
   updateCake(delta) 
   updateBonus(delta)
   updateScore(delta)
@@ -48,8 +48,7 @@ function update(time) {
 function ifLose() {
   const hanaRect = getHanaRect()
   
-  return getObstacleRects().some(rect => isCollision(rect,hanaRect)) || 
-  getCakeRects().some(rect => isCollision(rect,hanaRect))
+  return getCakeRects().some(rect => isCollision(rect,hanaRect))
 
 
 }
@@ -81,7 +80,7 @@ function handleStart() {
   lastTime = null
   score = 0
   setupHana()
-  setupObstacle()
+  // setupObstacle()
   setupCake() 
   setupBonus()
    
