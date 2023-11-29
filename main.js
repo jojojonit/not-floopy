@@ -102,7 +102,7 @@ function handleLose() {
 
 function handleBonus() {
   setBonusCollected()
-  score += 10
+  score += 100
 }
 
 
