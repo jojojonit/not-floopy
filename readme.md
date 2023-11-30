@@ -1,5 +1,5 @@
 # not-floppy
-<img src = "./public/imgs/not-floopy.png" alt = "floopy game logo" width = "60%">
+<img src = "./public/imgs/not-floopy.png" alt = "floopy game logo" width = "80%">
 This is the dino game that I'd rather play when my network is so bad. Updating the dino to a bunny with more appealing colors to appeal to the right demographic. It aims to give you something to do while idling or, even help you when you have a tough project to complete (like I did with this one).
 
 ## features
