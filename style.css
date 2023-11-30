@@ -8,11 +8,6 @@ body {
   background-color: #E4F9FF;
 }
 
-/* #game-screen {
-  overflow: hidden;
-  position: relative;
-} */
-
 .world {
   overflow: hidden;
   position: relative;
@@ -50,9 +45,6 @@ body {
   display: none;
 }
 
-
-
-
 .hana {
   --bottom: 0;
   position: absolute;
@@ -69,18 +61,23 @@ body {
   left: calc(var(--left) * 1%);
   height: 20%;
   bottom: calc(var(--bottom) * 1%);
-  margin-left: 10px;
-  /* margin-right: 10px; */
 }
 
 .cake {
   --bottom: 0;
+  /* --left: -10; */
   position: absolute;
   left: calc(var(--left) * 1%);
   height: 20%;
   bottom: calc(var(--bottom) * 1%);
-  /* margin-left: 10px; */
-  margin-right: 10px;
+}
+
+.carrot {
+--bottom: 0;
+position: absolute;
+left: calc(var(--left) * 1%);
+height: 20%;
+bottom: calc(var(--bottom) * 1%);
 }
 
 .bonus {
@@ -89,8 +86,6 @@ body {
   left: calc(var(--left) * 1%);
   height: 10%;
   top: calc(var(--top) * 1%);
-  /* margin-left: 10px; */
-  margin-right: 10px;
 }
 
 
