@@ -52,7 +52,6 @@ function ifBonus() {
   return getBonusRects().some(rect => isCollision(rect,hanaRect)) 
 }
 
-
 function isCollision (rect1, rect2) {
   return (
     rect1.left < rect2.right &&
@@ -87,7 +86,7 @@ function handleLose() {
   setTimeout(() => {
     document.addEventListener("keydown", handleStart, { once: true })
     startScreenEl.classList.remove("hide")
-    startScreenEl.innerHTML = "SCORE: " + Math.floor(score) + " <br />hit [space] to try again"
+    startScreenEl.innerHTML = "SCORE: " + Math.floor(score) + "<br />hit [space] to try again"
     
   }, 100)
 }
@@ -96,7 +95,6 @@ function handleBonus() {
   setBonusCollected()
   score += 100
 }
-
 
 function setPixelToWorldScale() {
   let worldToPixelScale
@@ -110,7 +108,4 @@ function setPixelToWorldScale() {
   worldEl.style.height = `${WORLD_HEIGHT * worldToPixelScale}px`
 }
 
-
 console.log("hana our happiness");
-
-
