@@ -4,8 +4,6 @@ const SPEEDCAKE = .05
 const CAKE_INTERVAL_MIN = 500
 const CAKE_INTERVAL_MAX = 2000
 const worldEl = document.querySelector(".world")
-const obstacle = document.querySelectorAll(".obstacle")
-
 
 
 let nextCakeTime
