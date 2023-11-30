@@ -6,7 +6,6 @@ const CAKE_INTERVAL_MAX = 2000
 const worldEl = document.querySelector(".world")
 
 let nextCakeTime
-
 export function setupCake() {
    
     nextCakeTime = CAKE_INTERVAL_MIN

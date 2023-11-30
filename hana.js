@@ -19,7 +19,7 @@ import {
     document.addEventListener("keydown", onJump)
   }
   
-  export function updateHana(delta, speedScale) {
+  export function updateHana(delta) {
     handleJump(delta)
   }
 
