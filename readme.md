@@ -19,6 +19,7 @@ Play the game [here] (https://not-floopy.vercel.app/).
 <img src = "./public/imgs/game-ss.png" alt = "not jumping" width = "100%">
 <img src = "./public/imgs/game-ss-1.png" alt = "jumping" width = "100%">
 <img src = "./public/imgs/game-ss-3.png" alt = "gameover" width = "100%">
+
 - tap [space] to jump over the obstacles
 - collect the stars for an extra +100 points
 - avoid the cake and carrots
