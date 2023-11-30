@@ -71,6 +71,7 @@ function updateScore(delta) {
 function handleStart() {
   lastTime = null
   score = 0
+
   setupBase()
   setupHana()
   setupCake() 
@@ -78,6 +79,7 @@ function handleStart() {
   
   startScreenEl.classList.add("hide")
   window.requestAnimationFrame(update)
+
 }
 
 function handleLose() {
