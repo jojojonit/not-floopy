@@ -38,8 +38,6 @@ export function getCakeRects() {
     })
 }
 
-
-
 function createCake() {
     const cake = document.createElement("img")
     cake.dataset.cake = true

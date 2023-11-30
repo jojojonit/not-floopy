@@ -4,7 +4,6 @@ const SPEED = .05
 const BONUS_INTERVAL_MIN = 2000
 const BONUS_INTERVAL_MAX = 4000
 const worldEl = document.querySelector(".world")
-const bonusElem = document.querySelector(".bonus")
 
 let nextBonusTime
 

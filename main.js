@@ -1,18 +1,14 @@
 import { updateBase, setupBase } from "./base.js"
 import { updateHana, setupHana, getHanaRect, setHanaLose } from "./hana.js"
 import { updateCake, setupCake, getCakeRects} from "./obstacles.js"
-// import { updateCake, setupCake, getCakeRects} from "./cake.js"
 import { updateBonus, setupBonus, getBonusRects, setBonusCollected} from "./bonus.js"
 
 const WORLD_WIDTH = 100
 const WORLD_HEIGHT = 30
 
-const gameScreen = document.querySelector("#game-screen")
 const worldEl = document.querySelector(".world")
 const scoreEl = document.querySelector("#score")
 const startScreenEl = document.querySelector(".start-screen")
-// const bonusEl = document.querySelectorAll(".bonus")
-// const obstacleEl = document.querySelectorAll(".obstacle")
 
 setPixelToWorldScale()
 window.addEventListener("resize", setPixelToWorldScale)
@@ -31,7 +27,6 @@ function update(time) {
   
   updateBase(delta)
   updateHana(delta)
-  // updateObstacle(delta)
   updateCake(delta) 
   updateBonus(delta)
   updateScore(delta)
@@ -41,17 +36,13 @@ function update(time) {
   if (ifLose()) return handleLose()
 
   
-
   lastTime = time
   window.requestAnimationFrame(update)
 }
 
 function ifLose() {
   const hanaRect = getHanaRect()
-  
-  // return getCakeRects().some(rect => isCollision(rect,hanaRect))
   return getCakeRects().some(rect => isCollision(rect,hanaRect))
-
 
 }
 
@@ -82,7 +73,6 @@ function handleStart() {
   score = 0
   setupBase()
   setupHana()
-  // setupObstacle()
   setupCake() 
   setupBonus()
   
